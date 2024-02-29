@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>한줄 뉴스-자바스크립트</title>
+<script type="text/javascript">
+		const news = ["여야, 선거구 획정안 합의… 전북 10석 유지·비례대표 1석 감축",
+			"국민연금, 작년 기금 운용수익률 13.59%…역대 최고",
+			"돈봉투 수수 허종식·임종성 기소… '전달' 윤관석도 추가기소",
+			"중기부 오영주, 27건 소통·142건 애로사항 청취…정책 현장서 나와",
+			"국토부, 연말까지 전국 건설 현장 안전 집중 점검",
+			"與 2차 경선서 현역 대거 승리… 김기현·주호영·김은혜 공천"];
+
+	let index = 0;
+	let timer ;
+	function start_news() {
+		// 2초마다 showNews 함수를 실행하자. (showNews는 콜백함수)
+		timer = setInterval(() => {
+			let div = document.querySelector("#mydiv");
+			div.textContent = news[index++];   // 한개씩 증가
+			if(index === news.length){index=0} // 처음으로 다시 돌아간다.
+		}, 2000); // 2초마다 
+	}
+	function stop_news() {
+		// setInterval() 중지
+		clearInterval(timer);
+	}
+</script>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<button onclick="start_news()">뉴스보기</button> <!-- 함수호출 방법 -->
+	<button onclick="stop_news()">뉴스중지</button>
+</body>
+</html>
