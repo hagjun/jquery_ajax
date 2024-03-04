@@ -18,7 +18,7 @@ $(document).ready(function() {
 		
 		let table = "<table>";
 		table += "<thead>" ;
-		table += "<tr><th>이름</th><th>가격</th></tr>" ;
+		table += "<tr><th>이름</th><th>갯수</th><th>회사</th></tr>" ;
 		table += "</thead>" ;
 		table += "<tbody>" ;
 		
@@ -26,14 +26,17 @@ $(document).ready(function() {
 		// jQuery에서 json을 가져오는 메서드 : getJSON()
 		
 		// $.get(서버url, function(data => 서버에서가져 온 데이터){});
-		$.get("data01.xml", function(data) {
+		$.get("data03.xml", function(data) {
 			// 가지고온 데이터가 xml 이므로 find 원하는 태그를 찾을 수 있다. => find("태그이름")
 			 $(data).find("product").each(function() {
-				let name = $(this).find("name").text();
-				let price = $(this).find("price").text();
+				let name = $(this).attr("name");
+				let count = $(this).attr("count");
+				let company = $(this).text();
+				
 				table += "<tr>" ;
 				table += "<td>"+name+"</td>" ;
-				table += "<td>"+price+"</td>" ;
+				table += "<td>"+count+"</td>" ;
+				table += "<td>"+company+"</td>" ;
 				table += "</tr>" ;
 			});
 			table += "</tbody></table>" ;
