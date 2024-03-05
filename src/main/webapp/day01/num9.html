@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#img").mouseover(function() {
+			$("#img").attr("src", "../images/img06_2.gif")
+		});
+		$("#img").mouseout(function() {
+			$(this).attr("src", "../images/img06_1.gif")
+		});
+	});
+</script>
+</head>
+<body>
+	<p><img id="img" alt="" src="../images/img06_1.gif"></p>
+</body>
+</html>

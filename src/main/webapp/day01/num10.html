@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		let ceoList = [
+			{name : "Larry page", age : 23, ceo:true},
+			{name : "Tim Cook", age : 40, ceo:false},
+			{name : "Elon Musk", age : 55, ceo:true}
+		];
+		
+		// 콘솔창에 이름들만 출력하기(map 사용)
+		let userName = ceoList.map(function(element) {
+			return `${element.name}`;
+		})
+		
+		console.log(userName);
+		*/
+		
+		let ceoList = [
+			{name : "Larry page", age : 23, ceo:true},
+			{name : "Tim Cook", age : 40, ceo:false},
+			{name : "Elon Musk", age : 55, ceo:true}
+		];
+		
+		// 콘솔창에 이름들만 출력하기(map 사용)
+		console.log("이름 : " , ceoList.map((ceoList)=>ceoList.name));
+		
+		console.log("나이가 40이상인 나이만 출력 : " , ceoList.filter((k)=> k.age >= 40));
+		
+		
+		
+	</script>
+</body>
+</html>
